@@ -17,3 +17,11 @@ export interface Location {
     name: string;
     url:  string;
 }
+
+export interface CartProduct{
+    id: number;
+    name: string;
+    image: string;
+    quantity: number;
+    //TODO: price
+}

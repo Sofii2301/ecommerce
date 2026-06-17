@@ -1,17 +1,10 @@
 import { useContext, type FC } from "react"
 import styles from "./CardProduct.module.css"
 import { CartContext } from "../../../context/CartContext"
-import type { Product } from "../../../interface"
+import type { CartProduct, Product } from "../../../interface"
 
 interface Props{
     product: Product
-}
-
-interface CartProduct{
-    id: number;
-    name: string;
-    image: string;
-    quantity: number;
 }
 
 export const CardProduct: FC<Props> = ({ product }) => {
