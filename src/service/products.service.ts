@@ -1,6 +1,6 @@
-import type { Products } from "../interface"
+import type { Product } from "../interface"
 
-export const getProducts = async ():Promise<Products[]> => {
+export const getProducts = async ():Promise<Product[]> => {
     try {
       const response = await fetch('http://localhost:3000/results')
       if (response) {

@@ -6,7 +6,7 @@ import { getProducts } from "../../service/products.service"
 import type { Product } from "../../interface"
 
 const Home = () => {
-  const [products, setProducts] = useState<Product>([])
+  const [products, setProducts] = useState<Product[]>([])
   const [error, setError]= useState(false)
   const [isLoading, setIsLoading]= useState(true)
   
