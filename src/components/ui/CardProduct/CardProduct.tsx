@@ -1,7 +1,22 @@
+import { useContext } from "react"
 import styles from "./CardProduct.module.css"
+import { CartContext } from "../../../context/CartContext"
 
 
 export const CardProduct = ({ product }) => {
+    const {dispatch} = useContext(CartContext)
+    console.log(product)
+
+    const item = {
+        id: product.id,
+        name: product.name,
+        image: product.image,
+        quantity: 1
+    }
+
+    const addToCart = (item) => {
+        dispatch({type: "ADD_TO_CART", payload: item})
+    }
 
     type CSSVariables = React.CSSProperties & {
     "--bg-image"?: string;
@@ -22,7 +37,7 @@ export const CardProduct = ({ product }) => {
                     <p className={styles.cardType}>{product.species}</p>
                     <p className={styles.cardPrice}>price, <small>00</small></p>
                 </div>
-                <button className={styles.cardButton}>Add to cart</button>
+                <button className={styles.cardButton} onClick={() => addToCart(item)}>Add to cart</button>
             </div>
         </div>
     )
