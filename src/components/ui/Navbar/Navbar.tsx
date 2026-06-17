@@ -2,6 +2,7 @@ import logo from "../../../assets/logo.png"
 import cart from "../../../assets/cart.svg"
 import styles from "./Navbar.module.css"
 import { useState } from "react"
+import { CartModal } from "../CartModal"
 
 export const Navbar = () => {
     const [showCartModal, setshowCartModal] = useState(false)
@@ -22,6 +23,7 @@ export const Navbar = () => {
                 <p className={styles.navbarTextAmount}>2</p>
                 <img src={cart} alt="Cart" onClick={handleShowCartModal} />
             </div>
+            {showCartModal && (<CartModal handleShowCartModal={handleShowCartModal} />)}
         </div>
     )
 }
